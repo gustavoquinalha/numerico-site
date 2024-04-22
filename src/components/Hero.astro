@@ -5,13 +5,18 @@ import asteriscoImage from '../../public/asterisco.svg';
 ---
 
 <div class="w-full min-h-dvh flex gap-4 flex-col justify-between relative" id="hero">
-  <div class="w-full min-h-[20dvh] flex justify-between items-start">
-    <span id="logo" class="text-2xl md:text-3xl p-10"></span>
-  </div>
+  <!-- <div class="w-full min-h-[20dvh] flex justify-between items-start">
+    <span class="text-2xl md:text-3xl p-10">numéric0</span>
+  </div> -->
 
-  <div class="relative w-full min-h-[60dvh] h-full flex items-center justify-center" id="container-icone">
+  <div class="relative w-full min-h-dvh h-full flex items-center justify-center" id="container-icone">
     <Image id="icone" width={400} src={iconeImage} class="absolute" alt="Icone" />
+
     <div class="mask-icone p-10 flex items-center justify-between w-full h-full">
+      <div class="absolute -z-20 top-0 left-0 flex justify-between items-start">
+        <span class="text-2xl md:text-3xl p-10">numéric0</span>
+      </div>
+
       <h1 class="text-4xl md:text-6xl leading-normal flex flex-col">
         Pensar,<br />
         Desenhar,<br />
@@ -19,16 +24,28 @@ import asteriscoImage from '../../public/asterisco.svg';
         Lançar,<br />
         Repetir.
       </h1>
-      <ul id="menu" class="flex flex-col justify-end items-end">
-        <li class="leading-7"><a href="">Trabalhos</a></li>
-        <li class="leading-7"><a href="">A empresa</a></li>
-        <li class="leading-7"><a href="">Desenvolvimento</a></li>
-        <li class="leading-7"><a href="">Soluções</a></li>
-        <li class="leading-7"><a href="">Contato</a></li>
+      <ul id="menu" class="hidden md:flex flex-col justify-end items-end absolute top-10 right-10">
+        <li class="leading-7"><a href="#">Trabalhos</a></li>
+        <li class="leading-7"><a href="#">A empresa</a></li>
+        <li class="leading-7"><a href="#">Desenvolvimento</a></li>
+        <li class="leading-7"><a href="#">Soluções</a></li>
+        <li class="leading-7"><a href="#">Contato</a></li>
       </ul>
+
+      <div class="w-full absolute -z-20 bottom-0 left-0">
+        <div class="marquee w-full flex justify-center items-center">
+          <div class="track">
+            <div class="content text-5xl md:text-7xl">WEB & DESIGN STUDIO * NUMÉRICO * WEB & DESIGN STUDIO * NUMÉRICO * WEB & DESIGN STUDIO * NUMÉRICO * WEB & DESIGN STUDIO * NUMÉRICO * WEB & DESIGN STUDIO * NUMÉRICO *</div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="p-10 flex items-center justify-between w-full h-full">
+      <div class="absolute -z-20 top-0 left-0 flex justify-between items-start">
+        <span class="text-2xl md:text-3xl p-10">numéric0</span>
+      </div>
+
       <h1 class="text-4xl md:text-6xl leading-normal flex flex-col">
         Pensar,<br />
         Desenhar,<br />
@@ -36,19 +53,21 @@ import asteriscoImage from '../../public/asterisco.svg';
         Lançar,<br />
         Repetir.
       </h1>
-      <ul id="menu" class="flex flex-col justify-end items-end">
-        <li class="leading-7"><a href="">Trabalhos</a></li>
-        <li class="leading-7"><a href="">A empresa</a></li>
-        <li class="leading-7"><a href="">Desenvolvimento</a></li>
-        <li class="leading-7"><a href="">Soluções</a></li>
-        <li class="leading-7"><a href="">Contato</a></li>
+      <ul id="menu" class="hidden md:flex flex-col justify-end items-end absolute top-10 right-10">
+        <li class="leading-7"><a href="#">Trabalhos</a></li>
+        <li class="leading-7"><a href="#">A empresa</a></li>
+        <li class="leading-7"><a href="#">Desenvolvimento</a></li>
+        <li class="leading-7"><a href="#">Soluções</a></li>
+        <li class="leading-7"><a href="#">Contato</a></li>
       </ul>
-    </div>
-  </div>
 
-  <div class="marquee min-h-[20dvh] w-full flex justify-center items-center">
-    <div class="track">
-      <div class="content text-2xl md:text-7xl">WEB & DESIGN STUDIO * NUMÉRICO * WEB & DESIGN STUDIO * NUMÉRICO * WEB & DESIGN STUDIO * NUMÉRICO * WEB & DESIGN STUDIO * NUMÉRICO * WEB & DESIGN STUDIO * NUMÉRICO *</div>
+      <div class="w-full absolute -z-20 bottom-0 left-0">
+        <div class="marquee w-full flex justify-center items-center">
+          <div class="track">
+            <div class="content text-5xl md:text-7xl">WEB & DESIGN STUDIO * NUMÉRICO * WEB & DESIGN STUDIO * NUMÉRICO * WEB & DESIGN STUDIO * NUMÉRICO * WEB & DESIGN STUDIO * NUMÉRICO * WEB & DESIGN STUDIO * NUMÉRICO *</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -69,7 +88,7 @@ import asteriscoImage from '../../public/asterisco.svg';
   </div>
 </div>
 
-<div class="w-full bg-black min-h-dvh flex flex-col justify-center items-center text-stone-100 text-center">
+<div class="w-full min-h-[80dvh] flex flex-col justify-center items-center text-center" id="together">
   <div class="max-w-lg flex flex-col justify-center items-center gap-20">
     <span class="text-4xl md:text-6xl leading-tight">Vamos fazer algo incrível <u>juntos</u></span>
     <span class="text-xl md:text-2xl leading-tight">contato@numeric0.com</span>
@@ -77,6 +96,9 @@ import asteriscoImage from '../../public/asterisco.svg';
 </div>
 
 <style>
+  .mask-icone {
+    color: #f5f5f4;
+  }
   #icone {
     bottom: 0;
     left: calc(100% - 400px);
@@ -91,10 +113,6 @@ import asteriscoImage from '../../public/asterisco.svg';
     mask-repeat: no-repeat;
     mask-position: 100% 100%;
     mask-size: 400px;
-  }
-
-  .mask-icone {
-    color: #f5f5f4;
   }
 
   #asterisco {
@@ -113,8 +131,8 @@ import asteriscoImage from '../../public/asterisco.svg';
     mask-size: 400px;
   }
 
-  .mask-asterisco h3 {
-    color: #fff;
+  .mask-asterisco {
+    color: #f5f5f4;
   }
 
   .marquee {
