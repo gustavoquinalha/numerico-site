@@ -1,54 +1,143 @@
 ---
 import { Image } from 'astro:assets';
-import logoImage from '../../public/logo.svg';
 import iconeImage from '../../public/icone.svg';
 import asteriscoImage from '../../public/asterisco.svg';
 ---
 
 <div class="w-full min-h-dvh flex gap-4 flex-col justify-between relative" id="hero">
-  <div class="w-ful p-10 flex justify-between items-start">
-    <span id="logo" class="text-2xl md:text-3xl"></span>
-
-    <ul id="menu" class="flex flex-col justify-end items-end fixed right-20 top-20">
-      <li class="leading-7"><a href="">Trabalhos</a></li>
-      <li class="leading-7"><a href="">A empresa</a></li>
-      <li class="leading-7"><a href="">Desenvolvimento</a></li>
-      <li class="leading-7"><a href="">Soluções</a></li>
-      <li class="leading-7"><a href="">Contato</a></li>
-    </ul>
+  <div class="w-full min-h-[20dvh] flex justify-between items-start">
+    <span id="logo" class="text-2xl md:text-3xl p-10"></span>
   </div>
 
-  <div class="w-[90%] mx-auto p-10 flex items-center justify-between h-full">
-    <h2 class="text-4xl md:text-6xl leading-normal">Pensar,<br /> Desenhar,<br /> Desenvolver,<br /> Lançar,<br /> Repetir.</h2>
-  </div>
-
-  <div class="absolute bottom-0 left-0 w-[90%] h-full text-center flex justify-end items-center" style="z-index: -1;">
-    <Image id="icone" src={iconeImage} class="max-w-96 w-full" alt="Icone" />
-  </div>
-
-  <div class="w-full">
-    <marquee behavior="scroll" direction="left" class="text-7xl"> WEB & DESIGN STUDIO * NÚMERIC0 * WEB & DESIGN STUDIO * NÚMERIC0 * WEB & DESIGN STUDIO * NÚMERIC0 * WEB & DESIGN STUDIO * NÚMERIC0 * WEB & DESIGN STUDIO * NÚMERIC0 * </marquee>
-  </div>
-</div>
-
-<div class="w-full min-h-dvh p-10 py-20 flex justify-center items-center text-center relative overflow-hidden">
-  <Image id="asterisco" src={asteriscoImage} class="max-w-96 w-full absolute top-52 left-0" style="z-index: -1;" alt="Logo" />
-  <div class="max-w-md">
-    <h3 class="text-2xl">desenvolva sua marca, venda online para todo o mundo, atraia mais clientes</h3>
-  </div>
-</div>
-
-<!-- <div class="p-10 py-20 w-full flex justify-center items-center text-left">
-    <div class="max-w-md">
-      <h3 class="text-7xl leading-tight">Pensar,<br /> Desenhar,<br /> Desenvolver,<br /> Lançar,<br /> Repetir.</h3>
+  <div class="relative w-full min-h-[60dvh] h-full flex items-center justify-center" id="container-icone">
+    <Image id="icone" width={400} src={iconeImage} class="absolute" alt="Icone" />
+    <div class="mask-icone p-10 flex items-center justify-between w-full h-full">
+      <h1 class="text-4xl md:text-6xl leading-normal flex flex-col">
+        Pensar,<br />
+        Desenhar,<br />
+        Desenvolver,<br />
+        Lançar,<br />
+        Repetir.
+      </h1>
+      <ul id="menu" class="flex flex-col justify-end items-end">
+        <li class="leading-7"><a href="">Trabalhos</a></li>
+        <li class="leading-7"><a href="">A empresa</a></li>
+        <li class="leading-7"><a href="">Desenvolvimento</a></li>
+        <li class="leading-7"><a href="">Soluções</a></li>
+        <li class="leading-7"><a href="">Contato</a></li>
+      </ul>
     </div>
-  </div> -->
 
-<div class="w-full bg-black min-h-dvh p-10 flex flex-col justify-center items-center text-stone-100 text-center">
+    <div class="p-10 flex items-center justify-between w-full h-full">
+      <h1 class="text-4xl md:text-6xl leading-normal flex flex-col">
+        Pensar,<br />
+        Desenhar,<br />
+        Desenvolver,<br />
+        Lançar,<br />
+        Repetir.
+      </h1>
+      <ul id="menu" class="flex flex-col justify-end items-end">
+        <li class="leading-7"><a href="">Trabalhos</a></li>
+        <li class="leading-7"><a href="">A empresa</a></li>
+        <li class="leading-7"><a href="">Desenvolvimento</a></li>
+        <li class="leading-7"><a href="">Soluções</a></li>
+        <li class="leading-7"><a href="">Contato</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="marquee min-h-[20dvh] w-full flex justify-center items-center">
+    <div class="track">
+      <div class="content text-2xl md:text-7xl">WEB & DESIGN STUDIO * NUMÉRICO * WEB & DESIGN STUDIO * NUMÉRICO * WEB & DESIGN STUDIO * NUMÉRICO * WEB & DESIGN STUDIO * NUMÉRICO * WEB & DESIGN STUDIO * NUMÉRICO *</div>
+    </div>
+  </div>
+</div>
+
+<div class="relative w-full min-h-[80dvh] h-full flex justify-center items-center" id="container-asterisco">
+  <Image id="asterisco" width={400} src={asteriscoImage} class="absolute" alt="Logo" />
+
+  <div class="mask-asterisco w-full h-full flex justify-center items-center text-center">
+    <div class="max-w-md">
+      <h3 class="text-2xl">Revolucione sua presença online com nossas soluções em design. Oferecemos experiências únicas em sites, e-commerces e aplicativos.</h3>
+    </div>
+  </div>
+
+  <div class="w-full h-full flex justify-center items-center text-center">
+    <div class="max-w-md">
+      <h3 class="text-2xl">Revolucione sua presença online com nossas soluções em design. Oferecemos experiências únicas em sites, e-commerces e aplicativos.</h3>
+    </div>
+  </div>
+</div>
+
+<div class="w-full bg-black min-h-dvh flex flex-col justify-center items-center text-stone-100 text-center">
   <div class="max-w-lg flex flex-col justify-center items-center gap-20">
     <span class="text-4xl md:text-6xl leading-tight">Vamos fazer algo incrível <u>juntos</u></span>
     <span class="text-xl md:text-2xl leading-tight">contato@numeric0.com</span>
   </div>
 </div>
 
-<style></style>
+<style>
+  #icone {
+    bottom: 0;
+    left: calc(100% - 400px);
+    width: 400px;
+  }
+
+  .mask-icone {
+    position: absolute;
+    top: 0;
+    left: 0;
+    mask-image: url('/icone.svg');
+    mask-repeat: no-repeat;
+    mask-position: 100% 100%;
+    mask-size: 400px;
+  }
+
+  .mask-icone {
+    color: #f5f5f4;
+  }
+
+  #asterisco {
+    top: calc(50% - 190px);
+    right: calc(100% - 400px);
+    width: 400px;
+  }
+
+  .mask-asterisco {
+    position: absolute;
+    top: 0;
+    left: 0;
+    mask-image: url('/asterisco.svg');
+    mask-repeat: no-repeat;
+    mask-position: 0 center;
+    mask-size: 400px;
+  }
+
+  .mask-asterisco h3 {
+    color: #fff;
+  }
+
+  .marquee {
+    position: relative;
+    width: 100vw;
+    max-width: 100%;
+    height: 100px;
+    overflow-x: hidden;
+  }
+
+  .track {
+    position: absolute;
+    white-space: nowrap;
+    will-change: transform;
+    animation: marquee 32s linear infinite;
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+</style>

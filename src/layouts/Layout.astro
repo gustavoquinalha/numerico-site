@@ -74,41 +74,35 @@ const { title } = Astro.props;
     toggleActions: 'play pause resume reset',
     scroller: 'body',
   });
+  // markers: true,
 
   const images: HTMLImageElement[] = gsap.utils.toArray('img');
   const loader = document.querySelector('#loading')!;
   const updateProgress = (instance: any) => (loader.textContent = `${Math.round((instance.progressedCount * 100) / images.length)}%`);
 
   const testee = () => {
-    console.log('testee');
-
     gsap.to('#icone', {
       scrollTrigger: {
         trigger: 'body',
         start: 'top top',
-        end: '40% top',
+        end: '20% top',
         scrub: true,
-        // markers: true,
       },
       stagger: 0.1,
-      y: -300,
-      x: -800,
-      scale: 2,
+      left: 0,
       ease: 'power1.in',
       scrub: true,
     });
 
-    gsap.to('#menu', {
+    gsap.to('.mask-icone', {
       scrollTrigger: {
         trigger: 'body',
         start: 'top top',
-        end: '30% 20%',
+        end: '20% top',
         scrub: true,
-        // markers: true,
       },
       stagger: 0.1,
-      y: 200,
-      x: 0,
+      maskPosition: '0% 100%',
       ease: 'power1.in',
       scrub: true,
     });
@@ -116,31 +110,28 @@ const { title } = Astro.props;
     gsap.to('#asterisco', {
       scrollTrigger: {
         trigger: 'body',
-        start: '20% 50%',
+        start: 'top 50%',
         end: '60% top',
         scrub: true,
-        // markers: true,
       },
       stagger: 0.1,
-      left: '130%',
-      y: 200,
-      rotate: 540,
+      right: 0,
       ease: 'power1.in',
       scrub: true,
     });
 
-    // let typeSplit = new SplitType('[animate]', {
-    //   types: 'lines, words, chars',
-    //   tagName: 'span',
-    // });
-
-    // gsap.from('[animate] .line', {
-    //   y: '100%',
-    //   opacity: 0,
-    //   duration: 0.5,
-    //   ease: 'power1.out',
-    //   stagger: 0.1,
-    // });
+    gsap.to('.mask-asterisco', {
+      scrollTrigger: {
+        trigger: 'body',
+        start: 'top 50%',
+        end: '60% top',
+        scrub: true,
+      },
+      stagger: 0.1,
+      maskPosition: '100% center',
+      ease: 'power1.in',
+      scrub: true,
+    });
   };
 
   const loadFinished = () => {
