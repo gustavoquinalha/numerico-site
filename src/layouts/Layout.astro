@@ -103,9 +103,9 @@ const { title } = Astro.props;
 
       gsap.to('.icone', {
         scrollTrigger: {
-          trigger: 'body',
+          trigger: '#hero',
           start: 'top top',
-          end: '20% top',
+          end: '100% top',
           scrub: true,
         },
         stagger: 0.1,
@@ -115,9 +115,9 @@ const { title } = Astro.props;
 
       gsap.to('.mask-icone', {
         scrollTrigger: {
-          trigger: 'body',
+          trigger: '#hero',
           start: 'top top',
-          end: '20% top',
+          end: '100% top',
           scrub: true,
         },
         stagger: 0.1,
@@ -127,9 +127,9 @@ const { title } = Astro.props;
 
       gsap.to('.asterisco', {
         scrollTrigger: {
-          trigger: 'body',
-          start: 'top 50%',
-          end: '60% top',
+          trigger: '.asterisco',
+          start: 'top bottom',
+          end: '100% top',
           scrub: true,
         },
         stagger: 0.1,
@@ -139,9 +139,9 @@ const { title } = Astro.props;
 
       gsap.to('.mask-asterisco', {
         scrollTrigger: {
-          trigger: 'body',
-          start: 'top 50%',
-          end: '60% top',
+          trigger: '.asterisco',
+          start: 'top bottom',
+          end: '100% top',
           scrub: true,
         },
         stagger: 0.1,
@@ -170,7 +170,7 @@ const { title } = Astro.props;
           scrub: true,
         },
         stagger: 0.1,
-        y: 200,
+        y: 100,
         ease: 'power1.in',
       });
     };

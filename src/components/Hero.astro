@@ -22,10 +22,24 @@
       </ul>
 
       <div class="w-full absolute -z-20 bottom-0 left-0">
-        <div class="marquee w-full flex justify-center items-center">
-          <div class="track">
-            <div class="content text-5xl md:text-7xl">WEB & DESIGN STUDIO * NUMÉRICO * WEB & DESIGN STUDIO * NUMÉRICO * WEB & DESIGN STUDIO * NUMÉRICO * WEB & DESIGN STUDIO * NUMÉRICO * WEB & DESIGN STUDIO * NUMÉRICO *</div>
-          </div>
+        <div class="marquee mb-4 text-5xl md:text-7xl">
+          <ul class="marquee__content">
+            <li>WEB & DESIGN STUDIO * NUMÉRICO *</li>
+            <li>WEB & DESIGN STUDIO * NUMÉRICO *</li>
+            <li>WEB & DESIGN STUDIO * NUMÉRICO *</li>
+            <li>WEB & DESIGN STUDIO * NUMÉRICO *</li>
+            <li>WEB & DESIGN STUDIO * NUMÉRICO *</li>
+            <li>WEB & DESIGN STUDIO * NUMÉRICO *</li>
+          </ul>
+
+          <ul aria-hidden="true" class="marquee__content">
+            <li>WEB & DESIGN STUDIO * NUMÉRICO *</li>
+            <li>WEB & DESIGN STUDIO * NUMÉRICO *</li>
+            <li>WEB & DESIGN STUDIO * NUMÉRICO *</li>
+            <li>WEB & DESIGN STUDIO * NUMÉRICO *</li>
+            <li>WEB & DESIGN STUDIO * NUMÉRICO *</li>
+            <li>WEB & DESIGN STUDIO * NUMÉRICO *</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -45,10 +59,24 @@
       </ul>
 
       <div class="w-full absolute -z-20 bottom-0 left-0">
-        <div class="marquee w-full flex justify-center items-center">
-          <div class="track">
-            <div class="content text-5xl md:text-7xl">WEB & DESIGN STUDIO * NUMÉRICO * WEB & DESIGN STUDIO * NUMÉRICO * WEB & DESIGN STUDIO * NUMÉRICO * WEB & DESIGN STUDIO * NUMÉRICO * WEB & DESIGN STUDIO * NUMÉRICO *</div>
-          </div>
+        <div class="marquee mb-4 text-5xl md:text-7xl">
+          <ul class="marquee__content">
+            <li>WEB & DESIGN STUDIO * NUMÉRICO *</li>
+            <li>WEB & DESIGN STUDIO * NUMÉRICO *</li>
+            <li>WEB & DESIGN STUDIO * NUMÉRICO *</li>
+            <li>WEB & DESIGN STUDIO * NUMÉRICO *</li>
+            <li>WEB & DESIGN STUDIO * NUMÉRICO *</li>
+            <li>WEB & DESIGN STUDIO * NUMÉRICO *</li>
+          </ul>
+
+          <ul aria-hidden="true" class="marquee__content">
+            <li>WEB & DESIGN STUDIO * NUMÉRICO *</li>
+            <li>WEB & DESIGN STUDIO * NUMÉRICO *</li>
+            <li>WEB & DESIGN STUDIO * NUMÉRICO *</li>
+            <li>WEB & DESIGN STUDIO * NUMÉRICO *</li>
+            <li>WEB & DESIGN STUDIO * NUMÉRICO *</li>
+            <li>WEB & DESIGN STUDIO * NUMÉRICO *</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -58,18 +86,18 @@
 <div class="asterisco relative w-full min-h-dvh h-full flex justify-center items-center">
   <div class="mask-asterisco text-stone-100 w-full h-full flex justify-center items-center text-center">
     <div class="max-w-md">
-      <h3 class="text-2xl uppercase">Revolucione sua presença online com nossas soluções em design. Oferecemos experiências únicas em sites, e-commerces e aplicativos.</h3>
+      <h3 class="text-2xl">Revolucione sua presença online com nossas soluções em design. Oferecemos experiências únicas em sites, e-commerces e aplicativos.</h3>
     </div>
   </div>
 
   <div class="w-full h-full flex justify-center items-center text-center">
     <div class="max-w-md">
-      <h3 class="text-2xl uppercase">Revolucione sua presença online com nossas soluções em design. Oferecemos experiências únicas em sites, e-commerces e aplicativos.</h3>
+      <h3 class="text-2xl">Revolucione sua presença online com nossas soluções em design. Oferecemos experiências únicas em sites, e-commerces e aplicativos.</h3>
     </div>
   </div>
 </div>
 
-<div class="w-full min-h-dvh flex flex-col justify-center items-center text-center overflow-hidden uppercase" id="together">
+<div class="w-full min-h-dvh flex flex-col justify-center items-center text-center overflow-hidden" id="together">
   <div class="max-w-lg flex flex-col justify-center items-center text-center gap-20">
     <div class="">
       <span class="text-4xl md:text-6xl flex justify-center items-center">Vamos fazer</span>
@@ -118,38 +146,47 @@
   }
 
   @media (max-width: 640px) {
-    .asterisco,
     .icone {
-      background-size: 700px;
+      background-size: 600px;
     }
 
-    .mask-asterisco,
     .mask-icone {
-      mask-size: 700px;
+      mask-size: 600px;
+    }
+
+    .asterisco {
+      background-size: 300px;
+    }
+
+    .mask-asterisco {
+      mask-size: 300px;
     }
   }
 
   .marquee {
+    --gap: 1rem;
     position: relative;
-    width: 100vw;
-    max-width: 100%;
-    height: 100px;
+    display: flex;
+    user-select: none;
+    gap: var(--gap);
     overflow-x: hidden;
   }
 
-  .track {
-    position: absolute;
-    white-space: nowrap;
-    will-change: transform;
-    animation: marquee 32s linear infinite;
+  .marquee__content {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-around;
+    gap: var(--gap);
+    min-width: 100%;
+    animation: scroll 20s linear infinite;
   }
 
-  @keyframes marquee {
+  @keyframes scroll {
     from {
       transform: translateX(0);
     }
     to {
-      transform: translateX(-50%);
+      transform: translateX(calc(-100% - var(--gap)));
     }
   }
 </style>
