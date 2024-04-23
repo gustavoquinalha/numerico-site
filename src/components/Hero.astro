@@ -1,8 +1,10 @@
----
-import { Image } from 'astro:assets';
-import asteriscoImage from '../../public/asterisco.svg';
----
-
+<!-- <h1 class="text-4xl md:text-8xl flex flex-col uppercase">
+  Pensar🤔,<br />
+  Desenhar✏️,<br />
+  Desenvolver🧑‍💻,<br />
+  Lançar🚀,<br />
+  Repetir🔄.
+</h1> -->
 <div class="w-full min-h-dvh flex gap-4 flex-col justify-between relative icone" id="hero">
   <div class="relative w-full min-h-dvh h-full flex items-center justify-center">
     <div class="mask-icone text-stone-100 p-10 flex items-center justify-between w-full h-full">
@@ -10,14 +12,8 @@ import asteriscoImage from '../../public/asterisco.svg';
         <span class="text-2xl md:text-3xl p-10">numéric0</span>
       </div>
 
-      <h1 class="text-4xl md:text-6xl leading-normal flex flex-col">
-        Pensar,<br />
-        Desenhar,<br />
-        Desenvolver,<br />
-        Lançar,<br />
-        Repetir.
-      </h1>
-      <ul id="menu" class="hidden md:flex flex-col justify-end items-end absolute top-10 right-10 -z-20">
+      <h1 class="text-4xl md:text-6xl lg:text-8xl flex flex-col uppercase max-w-7xl">Pensar, Desenhar, Desenvolver, Lançar, Repetir.</h1>
+      <ul id="menu" class="uppercase hidden md:flex flex-col justify-end items-end absolute top-10 right-10 -z-20">
         <li class="leading-7"><a href="#">Trabalhos</a></li>
         <li class="leading-7"><a href="#">A empresa</a></li>
         <li class="leading-7"><a href="#">Desenvolvimento</a></li>
@@ -39,14 +35,8 @@ import asteriscoImage from '../../public/asterisco.svg';
         <span class="text-2xl md:text-3xl p-10">numéric0</span>
       </div>
 
-      <h1 class="text-4xl md:text-6xl leading-normal flex flex-col">
-        Pensar,<br />
-        Desenhar,<br />
-        Desenvolver,<br />
-        Lançar,<br />
-        Repetir.
-      </h1>
-      <ul id="menu" class="hidden md:flex flex-col justify-end items-end absolute top-10 right-10 -z-20">
+      <h1 class="text-4xl md:text-6xl lg:text-8xl flex flex-col uppercase max-w-7xl">Pensar, Desenhar, Desenvolver, Lançar, Repetir.</h1>
+      <ul id="menu" class="uppercase hidden md:flex flex-col justify-end items-end absolute top-10 right-10 -z-20">
         <li class="leading-7"><a href="#">Trabalhos</a></li>
         <li class="leading-7"><a href="#">A empresa</a></li>
         <li class="leading-7"><a href="#">Desenvolvimento</a></li>
@@ -65,24 +55,30 @@ import asteriscoImage from '../../public/asterisco.svg';
   </div>
 </div>
 
-<div class="asterisco relative w-full min-h-[80dvh] h-full flex justify-center items-center">
+<div class="asterisco relative w-full min-h-dvh h-full flex justify-center items-center">
   <div class="mask-asterisco text-stone-100 w-full h-full flex justify-center items-center text-center">
     <div class="max-w-md">
-      <h3 class="text-2xl">Revolucione sua presença online com nossas soluções em design. Oferecemos experiências únicas em sites, e-commerces e aplicativos.</h3>
+      <h3 class="text-2xl uppercase">Revolucione sua presença online com nossas soluções em design. Oferecemos experiências únicas em sites, e-commerces e aplicativos.</h3>
     </div>
   </div>
 
   <div class="w-full h-full flex justify-center items-center text-center">
     <div class="max-w-md">
-      <h3 class="text-2xl">Revolucione sua presença online com nossas soluções em design. Oferecemos experiências únicas em sites, e-commerces e aplicativos.</h3>
+      <h3 class="text-2xl uppercase">Revolucione sua presença online com nossas soluções em design. Oferecemos experiências únicas em sites, e-commerces e aplicativos.</h3>
     </div>
   </div>
 </div>
 
-<div class="w-full min-h-dvh flex flex-col justify-center items-center text-center" id="together">
-  <div class="max-w-lg flex flex-col justify-center items-center gap-20">
-    <span class="text-4xl md:text-6xl leading-tight">Vamos fazer algo incrível <u>juntos</u></span>
-    <span class="text-xl md:text-2xl leading-tight">contato@numeric0.com</span>
+<div class="w-full min-h-dvh flex flex-col justify-center items-center text-center overflow-hidden uppercase" id="together">
+  <div class="max-w-lg flex flex-col justify-center items-center text-center gap-20">
+    <div class="">
+      <span class="text-4xl md:text-6xl flex justify-center items-center">Vamos fazer</span>
+      <span class="text-4xl md:text-6xl flex justify-center items-center">algo incrível</span>
+      <span class="text-4xl md:text-6xl flex justify-center items-center"><u>juntos</u></span>
+      <span class="text-xl md:text-2xl flex justify-center items-center mt-10">
+        <a href="mailto:contato@numeric0.com">contato@numeric0.com</a>
+      </span>
+    </div>
   </div>
 </div>
 
@@ -119,6 +115,18 @@ import asteriscoImage from '../../public/asterisco.svg';
     mask-repeat: no-repeat;
     mask-position: 0% 50%;
     mask-size: 500px;
+  }
+
+  @media (max-width: 640px) {
+    .asterisco,
+    .icone {
+      background-size: 700px;
+    }
+
+    .mask-asterisco,
+    .mask-icone {
+      mask-size: 700px;
+    }
   }
 
   .marquee {

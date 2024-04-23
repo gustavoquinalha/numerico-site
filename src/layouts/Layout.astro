@@ -161,6 +161,18 @@ const { title } = Astro.props;
         color: '#f5f5f4',
         ease: 'power1.in',
       });
+
+      gsap.from('#together span', {
+        scrollTrigger: {
+          trigger: '#together',
+          start: '0 100%',
+          end: 'center 40%',
+          scrub: true,
+        },
+        stagger: 0.1,
+        y: 200,
+        ease: 'power1.in',
+      });
     };
 
     (imagesLoaded(images) as any).on('progress', updateProgress).on('done', loadFinished).on('always', startAnimations);
