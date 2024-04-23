@@ -152,9 +152,10 @@ const { title } = Astro.props;
       gsap.to('#together', {
         scrollTrigger: {
           trigger: '#together',
-          start: 'top 50%',
-          end: '50% 90%',
+          start: '-10% 80%',
+          end: '30% 100%',
           scrub: true,
+          markers: true,
         },
         stagger: 0.1,
         backgroundColor: '#1c1917',
