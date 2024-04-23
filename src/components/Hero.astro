@@ -6,7 +6,7 @@ import asteriscoImage from '../../public/asterisco.svg';
 
 <div class="w-full min-h-dvh flex gap-4 flex-col justify-between relative" id="hero">
   <div class="relative w-full min-h-dvh h-full flex items-center justify-center" id="container-icone">
-    <Image id="icone" width={400} src={iconeImage} class="absolute" alt="Icone" />
+    <!-- <Image id="icone" width={400} src={iconeImage} class="absolute" alt="Icone" /> -->
 
     <div class="mask-icone p-10 flex items-center justify-between w-full h-full">
       <div class="absolute -z-20 top-0 left-0 flex justify-between items-start">
@@ -92,9 +92,17 @@ import asteriscoImage from '../../public/asterisco.svg';
 </div>
 
 <style>
+  #hero {
+    background-image: url('/icone.svg');
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    background-size: 500px;
+  }
+
   .mask-icone {
     color: #f5f5f4;
   }
+
   #icone {
     bottom: 0;
     left: calc(100% - 400px);
@@ -108,7 +116,7 @@ import asteriscoImage from '../../public/asterisco.svg';
     mask-image: url('/icone.svg');
     mask-repeat: no-repeat;
     mask-position: 100% 100%;
-    mask-size: 400px;
+    mask-size: 500px;
   }
 
   #asterisco {

@@ -101,7 +101,7 @@ const { title } = Astro.props;
         scroller: 'body',
       });
 
-      gsap.to('#icone', {
+      gsap.to('#hero', {
         scrollTrigger: {
           trigger: 'body',
           start: 'top top',
@@ -109,7 +109,7 @@ const { title } = Astro.props;
           scrub: true,
         },
         stagger: 0.1,
-        left: 0,
+        backgroundPosition: '0% 100%',
         ease: 'power1.in',
       });
 
@@ -153,7 +153,7 @@ const { title } = Astro.props;
         scrollTrigger: {
           trigger: '#together',
           start: 'top 50%',
-          end: '60% 90%',
+          end: '50% 90%',
           scrub: true,
         },
         stagger: 0.1,
