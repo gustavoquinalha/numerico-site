@@ -1,14 +1,11 @@
 ---
 import { Image } from 'astro:assets';
-import iconeImage from '../../public/icone.svg';
 import asteriscoImage from '../../public/asterisco.svg';
 ---
 
-<div class="w-full min-h-dvh flex gap-4 flex-col justify-between relative" id="hero">
-  <div class="relative w-full min-h-dvh h-full flex items-center justify-center" id="container-icone">
-    <!-- <Image id="icone" width={400} src={iconeImage} class="absolute" alt="Icone" /> -->
-
-    <div class="mask-icone p-10 flex items-center justify-between w-full h-full">
+<div class="w-full min-h-dvh flex gap-4 flex-col justify-between relative icone" id="hero">
+  <div class="relative w-full min-h-dvh h-full flex items-center justify-center">
+    <div class="mask-icone text-stone-100 p-10 flex items-center justify-between w-full h-full">
       <div class="absolute -z-20 top-0 left-0 flex justify-between items-start">
         <span class="text-2xl md:text-3xl p-10">numéric0</span>
       </div>
@@ -68,10 +65,8 @@ import asteriscoImage from '../../public/asterisco.svg';
   </div>
 </div>
 
-<div class="relative w-full min-h-[80dvh] h-full flex justify-center items-center" id="container-asterisco">
-  <Image id="asterisco" width={400} src={asteriscoImage} class="absolute" alt="Logo" />
-
-  <div class="mask-asterisco w-full h-full flex justify-center items-center text-center">
+<div class="asterisco relative w-full min-h-[80dvh] h-full flex justify-center items-center">
+  <div class="mask-asterisco text-stone-100 w-full h-full flex justify-center items-center text-center">
     <div class="max-w-md">
       <h3 class="text-2xl">Revolucione sua presença online com nossas soluções em design. Oferecemos experiências únicas em sites, e-commerces e aplicativos.</h3>
     </div>
@@ -92,21 +87,11 @@ import asteriscoImage from '../../public/asterisco.svg';
 </div>
 
 <style>
-  #hero {
+  .icone {
     background-image: url('/icone.svg');
     background-repeat: no-repeat;
     background-position: 100% 100%;
     background-size: 500px;
-  }
-
-  .mask-icone {
-    color: #f5f5f4;
-  }
-
-  #icone {
-    bottom: 0;
-    left: calc(100% - 400px);
-    width: 400px;
   }
 
   .mask-icone {
@@ -119,10 +104,11 @@ import asteriscoImage from '../../public/asterisco.svg';
     mask-size: 500px;
   }
 
-  #asterisco {
-    top: calc(50% - 190px);
-    right: calc(100% - 400px);
-    width: 400px;
+  .asterisco {
+    background-image: url('/asterisco.svg');
+    background-repeat: no-repeat;
+    background-position: 0% 50%;
+    background-size: 400px;
   }
 
   .mask-asterisco {
@@ -131,12 +117,8 @@ import asteriscoImage from '../../public/asterisco.svg';
     left: 0;
     mask-image: url('/asterisco.svg');
     mask-repeat: no-repeat;
-    mask-position: 0 center;
+    mask-position: 0% 50%;
     mask-size: 400px;
-  }
-
-  .mask-asterisco {
-    color: #f5f5f4;
   }
 
   .marquee {
