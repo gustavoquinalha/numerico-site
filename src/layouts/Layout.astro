@@ -35,7 +35,7 @@ const { title } = Astro.props;
     <meta property="twitter:description" content="Web & Design Studio" />
     <meta property="twitter:image" content="https://numeric0.com/images/intro3.png" />
   </head>
-  <body class="">
+  <body class="bg-stone-100 text-stone-950">
     <div class="loader flex items-center justify-center text-center w-screen h-screen bg-stone-950 text-stone-200 z-50 gap-4">
       <span id="loading" class="">0%</span>
     </div>
@@ -73,16 +73,18 @@ const { title } = Astro.props;
     document.body.style.overflow = 'hidden';
 
     
-    // document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mousemove', handleMouseMove);
     
-    // function handleMouseMove(event: any) {
-    //   const x = event.clientX;
-    //   const y = event.clientY;
+    function handleMouseMove(event: any) {
+      console.log(`handleMouseMove`);
+      const x = event.pageX;
+      const y = event.pageY;
       
-    //   const content: HTMLElement = document.querySelector('.content')!;
-    //   // content.style.cssText = `background-position: ${x - 200}px ${y - 200}px`;
-    //   // content.style.cssText = `mask-position: ${x - 200}px ${y - 200}px`;
-    // }
+      const content: HTMLElement = document.querySelector('.content')!;
+      const site1: HTMLElement = document.querySelector('.site-1')!;
+      content.style.cssText = `background-position: ${x - 200}px ${y - 200}px`;
+      site1.style.cssText = `mask-position: ${x - 200}px ${y - 200}px`;
+    }
 
     let resizeTimer: any;
     window.addEventListener('resize', () => {
@@ -113,29 +115,29 @@ const { title } = Astro.props;
         scroller: 'body',
       });
 
-      gsap.to('.icone', {
-        scrollTrigger: {
-          trigger: '#hero',
-          start: 'top top',
-          end: '100% top',
-          scrub: true,
-        },
-        stagger: 0.1,
-        backgroundPosition: '0% 100%',
-        ease: 'power1.in',
-      });
+      // gsap.to('.icone', {
+      //   scrollTrigger: {
+      //     trigger: '#hero',
+      //     start: 'top top',
+      //     end: '100% top',
+      //     scrub: true,
+      //   },
+      //   stagger: 0.1,
+      //   backgroundPosition: '0% 100%',
+      //   ease: 'power1.in',
+      // });
 
-      gsap.to('.mask-icone', {
-        scrollTrigger: {
-          trigger: '#hero',
-          start: 'top top',
-          end: '100% top',
-          scrub: true,
-        },
-        stagger: 0.1,
-        maskPosition: '0% 100%',
-        ease: 'power1.in',
-      });
+      // gsap.to('.mask-icone', {
+      //   scrollTrigger: {
+      //     trigger: '#hero',
+      //     start: 'top top',
+      //     end: '100% top',
+      //     scrub: true,
+      //   },
+      //   stagger: 0.1,
+      //   maskPosition: '0% 100%',
+      //   ease: 'power1.in',
+      // });
 
       // gsap.to('#together', {
       //   scrollTrigger: {
@@ -145,7 +147,7 @@ const { title } = Astro.props;
       //     scrub: true,
       //   },
       //   stagger: 0.1,
-      //   backgroundColor: '#1c1917',
+      //   backgroundColor: '#0c0a09',
       //   color: '#f5f5f4',
       //   ease: 'power1.in',
       // });
