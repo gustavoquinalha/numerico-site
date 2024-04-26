@@ -4,6 +4,9 @@ interface Props {
 }
 
 const { title } = Astro.props;
+
+import '@fontsource/geist-sans';
+import '@fontsource/geist-mono';
 ---
 
 <!doctype html>
@@ -43,25 +46,6 @@ const { title } = Astro.props;
   </body>
 </html>
 
-<!-- <script>
-  import TypeIt from 'typeit';
-
-  new TypeIt('#logo', {
-    speed: 400,
-    startDelay: 1000,
-    loop: true,
-  })
-    .type('numérico', { delay: 400 })
-    .pause(400)
-    .delete(1)
-    .pause(400)
-    .type('0', { delay: 400 })
-    .pause(400)
-    .delete(1)
-    .pause(400)
-    .type('*', { delay: 400 })
-    .go();
-</script> -->
 
 <script>
   import { gsap } from 'gsap';
@@ -72,14 +56,13 @@ const { title } = Astro.props;
   document.addEventListener('DOMContentLoaded', function () {
     document.body.style.overflow = 'hidden';
 
-    
     document.addEventListener('mousemove', handleMouseMove);
-    
+
     function handleMouseMove(event: any) {
       console.log(`handleMouseMove`);
       const x = event.pageX;
       const y = event.pageY;
-      
+
       const content: HTMLElement = document.querySelector('.content')!;
       const site1: HTMLElement = document.querySelector('.site-1')!;
       content.style.cssText = `background-position: ${x - 250}px ${y - 250}px`;
@@ -114,43 +97,6 @@ const { title } = Astro.props;
         toggleActions: 'play pause resume reset',
         scroller: 'body',
       });
-
-      // gsap.to('.icone', {
-      //   scrollTrigger: {
-      //     trigger: '#hero',
-      //     start: 'top top',
-      //     end: '100% top',
-      //     scrub: true,
-      //   },
-      //   stagger: 0.1,
-      //   backgroundPosition: '0% 100%',
-      //   ease: 'power1.in',
-      // });
-
-      // gsap.to('.mask-icone', {
-      //   scrollTrigger: {
-      //     trigger: '#hero',
-      //     start: 'top top',
-      //     end: '100% top',
-      //     scrub: true,
-      //   },
-      //   stagger: 0.1,
-      //   maskPosition: '0% 100%',
-      //   ease: 'power1.in',
-      // });
-
-      // gsap.to('#together', {
-      //   scrollTrigger: {
-      //     trigger: '#together',
-      //     start: '-10% 80%',
-      //     end: '30% 100%',
-      //     scrub: true,
-      //   },
-      //   stagger: 0.1,
-      //   backgroundColor: '#0c0a09',
-      //   color: '#f5f5f4',
-      //   ease: 'power1.in',
-      // });
     };
 
     (imagesLoaded(images) as any).on('progress', updateProgress).on('done', loadFinished).on('always', startAnimations);
@@ -158,9 +104,22 @@ const { title } = Astro.props;
 </script>
 
 <style is:global>
+
+.geist-sans,
+body {
+    font-family: 'Geist Sans', sans-serif;
+  }
+  .geist-mono,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Geist Mono';
+  }
+  
   html {
-    font-family: 'Fira Code', monospace;
-    font-weight: 600;
     overflow-x: hidden;
     height: 100%;
     -webkit-overflow-scrolling: touch;
