@@ -39,13 +39,12 @@ import '@fontsource/geist-mono';
     <meta property="twitter:image" content="https://numeric0.com/images/intro3.png" />
   </head>
   <body class="bg-stone-100 text-stone-950">
-    <div class="loader flex items-center justify-center text-center w-screen h-screen bg-stone-950 text-stone-200 z-50 gap-4">
+    <div class="loader flex items-center justify-center text-center w-screen h-screen bg-stone-950 text-stone-100 z-50 gap-4">
       <span id="loading" class="">0%</span>
     </div>
     <slot />
   </body>
 </html>
-
 
 <script>
   import { gsap } from 'gsap';
@@ -104,9 +103,12 @@ import '@fontsource/geist-mono';
 </script>
 
 <style is:global>
+  :root {
+    color-scheme: dark;
+  }
 
-.geist-sans,
-body {
+  .geist-sans,
+  body {
     font-family: 'Geist Sans', sans-serif;
   }
   .geist-mono,
@@ -118,7 +120,7 @@ body {
   h6 {
     font-family: 'Geist Mono';
   }
-  
+
   html {
     overflow-x: hidden;
     height: 100%;
