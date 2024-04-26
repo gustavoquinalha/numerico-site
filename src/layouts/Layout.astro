@@ -55,7 +55,31 @@ import '@fontsource/geist-mono';
   document.addEventListener('DOMContentLoaded', function () {
     document.body.style.overflow = 'hidden';
 
-    document.addEventListener('mousemove', handleMouseMove);
+    // document.addEventListener('mousemove', handleMouseMove);
+    // function handleMouseMove(event: any) {
+    //   console.log(`handleMouseMove`);
+    //   const x = event.pageX;
+    //   const y = event.pageY;
+
+    //   const content: HTMLElement = document.querySelector('.content')!;
+    //   const site1: HTMLElement = document.querySelector('.site-1')!;
+    //   content.style.cssText = `background-position: ${x - 250}px ${y - 250}px`;
+    //   site1.style.cssText = `mask-position: ${x - 250}px ${y - 250}px`;
+    // }
+
+    let valorDesconto = 50;
+
+    let isMouseMoveTimeout = false;
+    window.addEventListener('mousemove', (event) => {
+      if (!isMouseMoveTimeout) {
+        isMouseMoveTimeout = true;
+
+        setTimeout(() => {
+          handleMouseMove(event);
+          isMouseMoveTimeout = false;
+        }, 10);
+      }
+    });
 
     function handleMouseMove(event: any) {
       console.log(`handleMouseMove`);
@@ -64,16 +88,37 @@ import '@fontsource/geist-mono';
 
       const content: HTMLElement = document.querySelector('.content')!;
       const site1: HTMLElement = document.querySelector('.site-1')!;
-      content.style.cssText = `background-position: ${x - 250}px ${y - 250}px`;
-      site1.style.cssText = `mask-position: ${x - 250}px ${y - 250}px`;
+      content.style.cssText = `background-position: ${x - valorDesconto}px ${y - valorDesconto}px`;
+      site1.style.cssText = `mask-position: ${x - valorDesconto}px ${y - valorDesconto}px`;
     }
 
-    let resizeTimer: any;
-    window.addEventListener('resize', () => {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(startAnimations, 300);
-      ScrollTrigger.refresh();
+    let isScrollTimeout = false;
+    window.addEventListener('scroll', (event) => {
+      if (!isScrollTimeout) {
+        isScrollTimeout = true;
+
+        setTimeout(() => {
+          handleScroll(event);
+          isScrollTimeout = false;
+        }, 2000);
+      }
     });
+
+    function handleScroll(event: any) {
+      console.log('Scroll detectado!', event);
+
+      const scrollPosition = window.scrollY;
+      console.log('Posição atual do scroll:', scrollPosition);
+
+      const divContent: HTMLElement = document.querySelector('.content')!;
+
+      if (scrollPosition > 500) {
+        divContent.classList.add('teste');
+      } else {
+        divContent.classList.remove('teste');
+      }
+
+    }
 
     // markers: true,
 
@@ -96,6 +141,43 @@ import '@fontsource/geist-mono';
         toggleActions: 'play pause resume reset',
         scroller: 'body',
       });
+
+      // gsap.to('.icone', {
+      //   scrollTrigger: {
+      //     trigger: '#hero',
+      //     start: 'top top',
+      //     end: '100% top',
+      //     scrub: true,
+      //   },
+      //   stagger: 0.1,
+      //   backgroundPosition: '0% 100%',
+      //   ease: 'power1.in',
+      // });
+
+      // gsap.to('.mask-icone', {
+      //   scrollTrigger: {
+      //     trigger: '#hero',
+      //     start: 'top top',
+      //     end: '100% top',
+      //     scrub: true,
+      //   },
+      //   stagger: 0.1,
+      //   maskPosition: '0% 100%',
+      //   ease: 'power1.in',
+      // });
+
+      // gsap.to('#together', {
+      //   scrollTrigger: {
+      //     trigger: '#together',
+      //     start: '-10% 80%',
+      //     end: '30% 100%',
+      //     scrub: true,
+      //   },
+      //   stagger: 0.1,
+      //   backgroundColor: '#0c0a09',
+      //   color: '#f5f5f4',
+      //   ease: 'power1.in',
+      // });
     };
 
     (imagesLoaded(images) as any).on('progress', updateProgress).on('done', loadFinished).on('always', startAnimations);
