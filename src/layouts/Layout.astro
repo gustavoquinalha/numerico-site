@@ -13,19 +13,15 @@ import '@fontsource/geist-mono';
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <title>{title}</title>
     <meta name="description" content="Web & Design Studio" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@600&display=swap" rel="stylesheet" />
-
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="theme-color" content="#0c0a09" />
     <!-- Open Graph / Facebook -->
-    <meta property="og:title" content="numeric0" />
-    <meta property="og:description" content="Web & Design Studio" />
+    <meta property="og:title" content="numéric0 - Web & Design Studio" />
+    <meta property="og:description" content="Pensar, Desenhar, Desenvolver, Lançar, Repetir." />
     <meta property="og:type" content="website" />
     <meta property="og:image:alt" content="number zero" />
     <meta property="og:image" content="https://numeric0.com/images/intro3.png" />
@@ -34,8 +30,8 @@ import '@fontsource/geist-mono';
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://numeric0.com/" />
-    <meta property="twitter:title" content="numeric0" />
-    <meta property="twitter:description" content="Web & Design Studio" />
+    <meta property="twitter:title" content="numéric0 - Web & Design Studio" />
+    <meta property="twitter:description" content="Pensar, Desenhar, Desenvolver, Lançar, Repetir." />
     <meta property="twitter:image" content="https://numeric0.com/images/intro3.png" />
   </head>
   <body class="bg-stone-100 text-stone-950">
@@ -69,16 +65,8 @@ import '@fontsource/geist-mono';
 
     let valorDesconto = 50;
 
-    let isMouseMoveTimeout = false;
     window.addEventListener('mousemove', (event) => {
-      if (!isMouseMoveTimeout) {
-        isMouseMoveTimeout = true;
-
-        setTimeout(() => {
-          handleMouseMove(event);
-          isMouseMoveTimeout = false;
-        }, 10);
-      }
+      handleMouseMove(event);
     });
 
     function handleMouseMove(event: any) {
@@ -117,7 +105,6 @@ import '@fontsource/geist-mono';
       } else {
         divContent.classList.remove('teste');
       }
-
     }
 
     // markers: true,
