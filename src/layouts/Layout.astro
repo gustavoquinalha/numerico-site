@@ -70,7 +70,6 @@ import '@fontsource/geist-mono';
     });
 
     function handleMouseMove(event: any) {
-      // console.log(`handleMouseMove`);
       const x = event.pageX;
       const y = event.pageY;
 
@@ -93,13 +92,8 @@ import '@fontsource/geist-mono';
     });
 
     function handleScroll(event: any) {
-      // console.log('Scroll detectado!', event);
-
       const scrollPosition = window.scrollY;
-      // console.log('Posição atual do scroll:', scrollPosition);
-
       const divContent: HTMLElement = document.querySelector('.content')!;
-
       if (scrollPosition > 500) {
         divContent.classList.add('teste');
       } else {
