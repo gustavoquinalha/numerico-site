@@ -79,16 +79,16 @@ import '@fontsource/geist-mono';
       site1.style.cssText = `mask-position: ${x - valorDesconto}px ${y - valorDesconto}px`;
     }
 
-    let isScrollTimeout = false;
+    // let isScrollTimeout = false;
     window.addEventListener('scroll', (event) => {
-      if (!isScrollTimeout) {
-        isScrollTimeout = true;
+      // if (!isScrollTimeout) {
+      // isScrollTimeout = true;
 
-        setTimeout(() => {
-          handleScroll(event);
-          isScrollTimeout = false;
-        }, 2000);
-      }
+      // setTimeout(() => {
+      handleScroll(event);
+      // isScrollTimeout = false;
+      // }, 2000);
+      // }
     });
 
     function handleScroll(event: any) {
@@ -100,8 +100,6 @@ import '@fontsource/geist-mono';
         divContent.classList.remove('teste');
       }
     }
-
-    // markers: true,
 
     const images: HTMLImageElement[] = gsap.utils.toArray('img');
 
@@ -121,6 +119,46 @@ import '@fontsource/geist-mono';
       ScrollTrigger.defaults({
         toggleActions: 'play pause resume reset',
         scroller: 'body',
+      });
+
+      gsap.from('.site-1 .text-hero span', {
+        y: 200,
+        ease: 'power4.out',
+        delay: 0.5,
+        skewY: 7,
+        stagger: {
+          amount: 0.3,
+        },
+      });
+
+      gsap.from('.site-2 .text-hero span', {
+        y: 200,
+        ease: 'power4.out',
+        delay: 0.5,
+        skewY: 7,
+        stagger: {
+          amount: 0.3,
+        },
+      });
+
+      gsap.from('.site-1 #menu a', {
+        y: 400,
+        ease: 'power4.out',
+        delay: 0.5,
+        skewY: 7,
+        stagger: {
+          amount: 0.3,
+        },
+      });
+
+      gsap.from('.site-2 #menu a', {
+        y: 400,
+        ease: 'power4.out',
+        delay: 0.5,
+        skewY: 7,
+        stagger: {
+          amount: 0.3,
+        },
       });
 
       // gsap.to('.icone', {
@@ -159,6 +197,90 @@ import '@fontsource/geist-mono';
       //   color: '#f5f5f4',
       //   ease: 'power1.in',
       // });
+
+      gsap.from('.site-1 #empresa', {
+        scrollTrigger: {
+          trigger: '.site-1 #empresa',
+          start: 'top bottom',
+          end: '50% bottom',
+          scrub: true,
+          // markers: true,
+        },
+        stagger: 0.1,
+        y: 200,
+        opacity: 0,
+        ease: 'power1.in',
+      });
+
+      gsap.from('.site-2 #empresa', {
+        scrollTrigger: {
+          trigger: '.site-2 #empresa',
+          start: 'top bottom',
+          end: '50% bottom',
+          scrub: true,
+          // markers: true,
+        },
+        stagger: 0.1,
+        y: 200,
+        opacity: 0,
+        ease: 'power1.in',
+      });
+
+      gsap.from('.site-1 #trabalhos', {
+        scrollTrigger: {
+          trigger: '.site-1 #trabalhos',
+          start: 'top bottom',
+          end: '50% bottom',
+          scrub: true,
+          // markers: true,
+        },
+        stagger: 0.1,
+        y: 200,
+        opacity: 0,
+        ease: 'power1.in',
+      });
+
+      gsap.from('.site-2 #trabalhos', {
+        scrollTrigger: {
+          trigger: '.site-2 #trabalhos',
+          start: 'top bottom',
+          end: '50% bottom',
+          scrub: true,
+          // markers: true,
+        },
+        stagger: 0.1,
+        y: 200,
+        opacity: 0,
+        ease: 'power1.in',
+      });
+
+      gsap.from('.site-1 #contato', {
+        scrollTrigger: {
+          trigger: '.site-1 #contato',
+          start: 'top bottom',
+          end: '50% bottom',
+          scrub: true,
+          // markers: true,
+        },
+        stagger: 0.1,
+        y: 200,
+        opacity: 0,
+        ease: 'power1.in',
+      });
+
+      gsap.from('.site-2 #contato', {
+        scrollTrigger: {
+          trigger: '.site-2 #contato',
+          start: 'top bottom',
+          end: '50% bottom',
+          scrub: true,
+          // markers: true,
+        },
+        stagger: 0.1,
+        y: 200,
+        opacity: 0,
+        ease: 'power1.in',
+      });
     };
 
     (imagesLoaded(images) as any).on('progress', updateProgress).on('done', loadFinished).on('always', startAnimations);
