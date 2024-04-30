@@ -116,19 +116,8 @@ import '@fontsource/geist-mono';
         scroller: 'body',
       });
 
-      gsap.from('.animate-logo', {
+      gsap.from('.site-1 .animate-logo', {
         scrollTrigger: '.site-1 .animate-logo',
-        y: 100,
-        opacity: 0,
-        ease: 'power4.out',
-        skewY: 7,
-        stagger: {
-          amount: 0.3,
-        },
-      });
-
-      gsap.from('.site-1 .animate-menu', {
-        scrollTrigger: '.site-1 .animate-menu',
         y: 100,
         opacity: 0,
         ease: 'power4.out',
@@ -140,6 +129,17 @@ import '@fontsource/geist-mono';
 
       gsap.from('.site-2 .animate-logo', {
         scrollTrigger: '.site-2 .animate-logo',
+        y: 100,
+        opacity: 0,
+        ease: 'power4.out',
+        skewY: 7,
+        stagger: {
+          amount: 0.3,
+        },
+      });
+
+      gsap.from('.site-1 .animate-menu', {
+        scrollTrigger: '.site-1 .animate-menu',
         y: 100,
         opacity: 0,
         ease: 'power4.out',
@@ -161,9 +161,8 @@ import '@fontsource/geist-mono';
       });
 
       gsap.from('.site-1 .text-hero span', {
-        y: 200,
+        y: 100,
         ease: 'power4.out',
-        delay: 1,
         skewY: 7,
         stagger: {
           amount: 0.3,
@@ -171,9 +170,8 @@ import '@fontsource/geist-mono';
       });
 
       gsap.from('.site-2 .text-hero span', {
-        y: 200,
+        y: 100,
         ease: 'power4.out',
-        delay: 0.5,
         skewY: 7,
         stagger: {
           amount: 0.3,
@@ -181,9 +179,8 @@ import '@fontsource/geist-mono';
       });
 
       gsap.from('.site-1 #menu a', {
-        y: 400,
+        y: 100,
         ease: 'power4.out',
-        delay: 0.5,
         skewY: 7,
         stagger: {
           amount: 0.3,
@@ -191,9 +188,8 @@ import '@fontsource/geist-mono';
       });
 
       gsap.from('.site-2 #menu a', {
-        y: 400,
+        y: 100,
         ease: 'power4.out',
-        delay: 0.5,
         skewY: 7,
         stagger: {
           amount: 0.3,
