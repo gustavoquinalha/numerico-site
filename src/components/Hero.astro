@@ -3,11 +3,11 @@
     <div class="w-full min-h-dvh flex gap-4 flex-col justify-between relative icone mb-40" id="hero">
       <div class="relative w-full min-h-dvh h-full flex items-center justify-center">
         <div class="p-10 flex items-center justify-between w-full h-full">
-          <div class="absolute top-0 left-0 flex justify-between items-start">
-            <span class="text-2xl md:text-3xl p-10 geist-mono font-medium">numéric0</span>
+          <div class="absolute top-0 left-0 flex justify-between items-start overflow-hidden">
+            <span class="text-2xl md:text-3xl p-10 geist-mono font-medium animate-logo">numéric0</span>
           </div>
 
-          <h1 class="text-4xl md:text-6xl lg:text-9xl flex flex-col max-w-6xl text-hero w-full">
+          <h1 class="text-4xl md:text-6xl lg:text-9xl flex flex-col max-w-6xl text-hero w-full h-full">
             <div class="line">
               <span>Pensar,</span>
             </div>
@@ -25,7 +25,7 @@
             </div>
           </h1>
 
-          <ul id="menu" class="font-medium hidden md:flex flex-col justify-end items-end absolute top-10 right-10 geist-mono">
+          <ul id="menu" class="font-medium hidden md:flex flex-col justify-end items-end absolute top-10 right-10 geist-mono animate-menu">
             <li class="leading-7">
               <a class="" href="#trabalhos">
                 <span>Trabalhos</span>
@@ -194,11 +194,11 @@
     <div class="w-full min-h-dvh flex gap-4 flex-col justify-between relative icone mb-40" id="hero">
       <div class="relative w-full min-h-dvh h-full flex items-center justify-center">
         <div class="p-10 flex items-center justify-between w-full h-full">
-          <div class="absolute top-0 left-0 flex justify-between items-start">
-            <span class="text-2xl md:text-3xl p-10 geist-mono font-medium">numéric0</span>
+          <div class="absolute top-0 left-0 flex justify-between items-start overflow-hidden">
+            <span class="text-2xl md:text-3xl p-10 geist-mono font-medium animate-logo">numéric0</span>
           </div>
 
-          <h1 class="text-4xl md:text-6xl lg:text-9xl flex flex-col max-w-6xl text-hero w-full">
+          <h1 class="text-4xl md:text-6xl lg:text-9xl flex flex-col max-w-6xl text-hero w-full h-full">
             <div class="line">
               <span>Pensar,</span>
             </div>
@@ -216,7 +216,7 @@
             </div>
           </h1>
 
-          <ul id="menu" class="font-medium hidden md:flex flex-col justify-end items-end absolute top-10 right-10 geist-mono">
+          <ul id="menu" class="font-medium hidden md:flex flex-col justify-end items-end absolute top-10 right-10 geist-mono animate-menu">
             <li class="leading-7">
               <a class="" href="#trabalhos">
                 <span>Trabalhos</span>
@@ -410,20 +410,6 @@
     mask-image: url('/asterisco.svg');
   }
 
-  @media (max-width: 640px) {
-    .icone {
-      background-size: 600px;
-    }
-
-    .mask-icone {
-      mask-size: 600px;
-    }
-
-    .marquee__content {
-      animation: scroll 120s linear infinite;
-    }
-  }
-
   .marquee {
     --gap: 1rem;
     position: relative;
@@ -454,12 +440,40 @@
 
   .line {
     width: 100%;
-    height: 128px;
+    height: 130px;
     position: relative;
     overflow: hidden;
   }
 
   .line span {
     position: absolute;
+  }
+
+  @media (max-width: 1024px) {
+    .line {
+      height: 70px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .line {
+      height: 50px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .content {
+      background-size: 120vw;
+      background-position: 25vw 10vh;
+    }
+
+    .site-1 {
+      mask-size: 120vw;
+      mask-position: 25vw 10vh;
+    }
+
+    .marquee__content {
+      animation: scroll 120s linear infinite;
+    }
   }
 </style>
